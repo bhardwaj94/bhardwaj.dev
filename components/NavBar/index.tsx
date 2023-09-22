@@ -3,7 +3,7 @@ import React from "react";
 import { FaFacebookF,FaCircleChevronDown, FaSquareXTwitter, FaSkype, FaInstagram, FaSquareGithub, FaGooglePlusG, FaLinkedinIn } from "react-icons/fa6";
 import { Navbar, NavbarContent, NavbarMenu, NavbarMenuItem, NavbarItem, Link, NavbarMenuToggle } from "@nextui-org/react";
 
-export default function Nav({ resumeData }) {
+export default function Nav({ resumeData }:any) {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
     const menuItems = [
@@ -25,8 +25,8 @@ export default function Nav({ resumeData }) {
                     />
                 </NavbarContent>
                 <NavbarContent className="hidden sm:flex gap-4" justify="center">
-                    {menuItems.map((item) => (
-                        <NavbarItem>
+                    {menuItems.map((item,index) => (
+                        <NavbarItem key={index}>
                             <Link color="foreground" href="#">
                                 {item}
                             </Link>
@@ -45,9 +45,9 @@ export default function Nav({ resumeData }) {
             </Navbar>
             <div className="flex flex-col gap-24 justify-between">
                 <div className="flex-col w-full">
-                    <h1 className="text-[72px]">I'm {resumeData.firstname}<br />{resumeData.lastname}.</h1>
+                    <h1 className="text-[72px]">I&apos;m {resumeData.firstname}<br />{resumeData.lastname}.</h1>
                     <h3 className="responsive-headline"><span>{resumeData.tech}</span></h3>
-                    <h3><span className="text-slate-500">I'm a {resumeData.role} specialized in</span> <span>React</span> <span className="text-slate-500">and </span><span>Node.js</span>.<span className="text-slate-500"> Let's </span> <br />
+                    <h3><span className="text-slate-500">I&apos;m a {resumeData.role} specialized in</span> <span>React</span> <span className="text-slate-500">and </span><span>Node.js</span>.<span className="text-slate-500"> Let&apos;s </span> <br />
                         <a href="#about"> start scrolling </a>
                         <span className="text-slate-500"> and learn more </span> <a className="smoothscroll" href="#about">about me</a>.</h3>
                     <div className="social flex justify-center gap-5 mt-8">
